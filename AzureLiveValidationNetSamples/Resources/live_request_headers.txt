@@ -1,0 +1,7 @@
+﻿{
+  "Content-Type": "application/json; charset=utf-8",
+  "Content-Length": "2687",
+  "x-ms-client-request-id": "907b1d69-63aa-473e-8050-b7dd266a4f81",
+  "accept-language": "en-US",
+  "User-Agent": "Microsoft.Azure.Management.Compute.ComputeManagementClient/9.0.0.0"
+}

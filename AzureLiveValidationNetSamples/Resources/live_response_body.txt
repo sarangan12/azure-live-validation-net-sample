@@ -1,0 +1,6 @@
+﻿{
+  "error": {
+    "code": "LinkedAuthorizationFailed",
+	"message": "The client 'phuang@microsoft.com' with object id 'f6bde659-aae5-4ba4-8da2-8d07610f7210' has permission to perform action 'Microsoft.Compute/virtualMachines/write' on scope '/subscriptions/4d368445-cbb1-42a7-97a6-6850ab99f48e/resourceGroups/pslibtest9279/providers/Microsoft.Compute/virtualMachines/vm1827'; however, it does not have permission to perform action 'Microsoft.KeyVault/vaults/deploy/action' on the linked scope(s) '/subscriptions/ccfebd33-45cd-4e22-9389-98982441aa5d/resourceGroups/pslibtestosprofile/providers/Microsoft.KeyVault/vaults/pslibtestkeyvault'."
+  }
+}

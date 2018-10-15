@@ -1,0 +1,81 @@
+﻿{
+  "location": "SoutheastAsia",
+  "tags": {
+    "RG": "rg",
+	"testTag": "1"
+  },
+  "properties": {
+    "hardwareProfile": {
+	  "vmSize": "Standard_A0"
+	},
+	"storageProfile": {
+	  "imageReference": {
+	    "publisher": "MicrosoftWindowsServer",
+        "offer": "WindowsServer",
+        "sku": "2012-R2-Datacenter",
+        "version": "4.0.201505"
+      },
+      "osDisk": {
+        "name": "test",
+        "vhd": {
+          "uri": "https://pslibtest475.blob.core.windows.net/pslibtest1846/ospslibtest7802.vhd"
+        },
+        "caching": "None",
+        "createOption": "fromImage"
+      }
+   },
+   "osProfile": {
+     "computerName": "test",
+     "adminUsername": "Foo12",
+     "adminPassword": "[PLACEHOLDER]",
+     "customData": "ZWNobyAnSGVsbG8gV29ybGQn",
+     "windowsConfiguration": {
+       "provisionVMAgent": true,
+       "enableAutomaticUpdates": false,
+       "timeZone": "Pacific Standard Time",
+       "additionalUnattendContent": [
+         {
+           "passName": "oobeSystem",
+           "componentName": "Microsoft-Windows-Shell-Setup",
+           "settingName": "AutoLogon",
+           "content": "<AutoLogon><Enabled>true</Enabled><LogonCount>5</LogonCount><Username>Foo12</Username><Password><Value>[PLACEHOLDER]</Value><PlainText>true</PlainText></Password></AutoLogon>"
+         }
+       ],
+       "winRM": {
+         "listeners": [
+           {
+             "protocol": "Http"
+           },
+           {
+              "protocol": "Https",
+              "certificateUrl": "https://pslibtestkeyvault.vault.azure.net/secrets/WinRM/24c727e7449b47cb9d2f385113f59a63"
+           }
+         ]
+       }
+     },
+     "secrets": [
+       {
+         "sourceVault": {
+           "id": "/subscriptions/ccfebd33-45cd-4e22-9389-98982441aa5d/resourceGroups/pslibtestosprofile/providers/Microsoft.KeyVault/vaults/pslibtestkeyvault"
+         },
+         "vaultCertificates": [
+           {
+             "certificateUrl": "https://pslibtestkeyvault.vault.azure.net/secrets/WinRM/24c727e7449b47cb9d2f385113f59a63",
+             "certificateStore": "My"
+           }
+         ]
+       }
+     ]
+   },
+   "networkProfile": {
+     "networkInterfaces": [
+       {
+         "id": "/subscriptions/4d368445-cbb1-42a7-97a6-6850ab99f48e/resourceGroups/pslibtest9279/providers/Microsoft.Network/networkInterfaces/azsmnet504"
+       }
+     ]
+   },
+   "availabilitySet": {
+     "id": "/subscriptions/4d368445-cbb1-42a7-97a6-6850ab99f48e/resourceGroups/pslibtest9279/providers/Microsoft.Compute/availabilitySets/as9002"
+   }
+ }
+}
